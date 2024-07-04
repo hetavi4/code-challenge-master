@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Swap Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <div class="container">
+        <header>
+            <h1>Fancy Swap Form</h1>
+        </header>
+        <main>
+            <div class="form-container">
+                <div class="tab">
+                    <button class="tablinks" data-tab="Swap">Swap</button>
+                    <button class="tablinks" data-tab="Pool">Pool</button>
+                    <button class="tablinks" data-tab="Vote">Vote</button>
+                </div>
+                <div id="Swap" class="tabcontent">
+                    <form id="swapForm">
+                        <label for="fromValue">From:</label>
+                        <div class="token-input">
+                            <input type="number" id="fromValue" name="fromValue" placeholder="Value" required>
+                            <input type="text" id="fromToken" name="fromToken" placeholder="Currency" required>
+                            <img id="fromTokenImg" src="" alt="Token Image">
+                        </div>
+                        <button type="button" id="reverseTokens">↔</button>
+                        <label for="toValue">To:</label>
+                        <div class="token-input">
+                            <input type="number" id="toValue" name="toValue" placeholder="Value" readonly>
+                            <input type="text" id="toToken" name="toToken" placeholder="Currency" required>
+                            <img id="toTokenImg" src="" alt="Token Image">
+                        </div>
+                        <button type="submit">Swap</button>
+                    </form>
+                    <div id="error" class="message error"></div>
+                    <div id="success" class="message success"></div>
+                </div>
+                <div id="Pool" class="tabcontent">
+                    <p>Pool functionality coming soon!</p>
+                </div>
+                <div id="Vote" class="tabcontent">
+                    <p>Vote functionality coming soon!</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
