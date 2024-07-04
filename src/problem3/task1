@@ -1,0 +1,25 @@
+Computational Inefficiencies and Anti-patterns in the Code:
+
+Unnecessary API Requests on Every Render:
+Issue: The useEffect hook inside WalletPage component fetches prices from an API on every render because the dependency array ([]) is empty.
+Improvement: Move the API call inside useEffect to execute only once when the component mounts ([] should include datasource if using the same object).
+
+Inefficient Sorting and Filtering Logic:
+Issue: The sortedBalances memoized computation sorts and filters balances based on blockchain priorities and then sorts them again for rows. This can be inefficient for large datasets.
+Improvement: Optimize sorting and filtering logic to avoid repeated computations or consider sorting and filtering on the backend if feasible.
+
+Misuse of useMemo:
+Issue: sortedBalances uses useMemo without dependencies specified. This can lead to unexpected behavior if not properly managed.
+Improvement: Specify correct dependencies (balances, prices) to ensure useMemo recalculates only when necessary.
+
+Missing Error Handling:
+Issue: There is no proper error handling for the API call (datasource.getPrices().catch). Errors are logged to the console but not managed gracefully in the UI.
+Improvement: Implement error handling to provide feedback to users or retry mechanisms for failed API calls.
+
+Non-Descriptive Variable Names:
+Issue: Variable names like lhs, rhs, datasource, prices, and rows are not descriptive and can be confusing.
+Improvement: Use more descriptive names that convey their purpose clearly (leftPriority, rightPriority, apiDataSource, currencyPrices, walletRows).
+
+Unused Interface (Props):
+Issue: The Props interface is defined but not used within the WalletPage component.
+Improvement: Remove unused interfaces or utilize them appropriately.

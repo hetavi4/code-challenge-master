@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #E6E6FA, #D1D1FF);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.tab {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: #7b68ee; /* Nice shade of purple */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.tab button {
+  background-color: #7b68ee; /* Nice shade of purple */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 24px;
+  transition: 0.3s;
+  font-size: 16px;
+  margin: 0 5px;
+  border-radius: 4px;
+  color: white;
+}
+
+.tab button:hover {
+  background-color: #312292;
+}
+
+.tab button.active {
+  background-color: #312292;
+}
+
+.tabcontent {
+  display: none;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: -10px; /* Adjust as needed */
+}
+
+.form-container {
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.token-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.token-input input {
+  width: calc(100% - 40px); /* Adjust width for image */
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.token-input img {
+  width: 30px; /* Adjust image size as needed */
+  margin-left: 10px; /* Adjust spacing between input and image */
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.message {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  display: none; /* Hide initially */
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+#reverseTokens {
+  transform: rotate(90deg);
+  padding: 10px; /* Adjust as necessary */
+  margin: 10px 0; /* Adjust as necessary */
+  cursor: pointer;
+}
